@@ -1,0 +1,33 @@
+// css footer
+footer{
+    padding: 20px 0;
+    background-color: $black-bg-cl;
+    color: #b0b0b0;
+    position: relative;
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .logo{
+        position: absolute;
+        left: 50%;
+        @include transform(translateX(-50%));
+    }
+    .backtotop{
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+    @include mobile{
+        
+        .container{
+            flex-direction: column;
+        }
+        .logo{
+            margin: 20px auto;
+            position: initial;
+            left: initial;
+            @include transform(initial);
+        }
+    }
+}

@@ -1,0 +1,80 @@
+// css button, title, icon, elements...
+img {
+    max-width: 100%;
+}
+
+.btnmain{
+    border: 1px solid white;
+    padding: 12px 40px;
+    margin: 5px;
+    text-decoration: none;
+    color: $white-cl;
+    font-family: pb;
+    text-transform: uppercase;
+    font-size: 16px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1px;
+    i{
+        padding-left: 20px;
+        
+    }
+    @include transition($t);
+    &:hover{
+        @include transform(scale(1));
+        background-color: $yellow-cl;
+        color: $white-cl;
+        @include transition($t);
+    }
+}
+
+.btnmore{
+    display: inline-flex;
+    font-family: pb;
+    letter-spacing: 2px;
+    position: relative;
+    font-size: 18px;
+    text-decoration: none;
+    color: #121212;
+    margin-left: 100px;
+    @include transition($t);
+    
+    img{
+        margin-left: 10px;
+        position: relative;
+        @include transform(scaleX(0px));
+        @include transition($t);
+    }
+    &:before{
+        content: '';
+        width: 35px;
+        height: 2px;
+        background: $yellow-cl;
+        display: block;
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        
+    }
+    
+    &:hover{
+        color:$yellow-cl;
+        img{
+            @include transform(translateX(10px));
+            @include transition($t);
+        }
+        
+    }
+    
+    
+    @include tablet{
+        margin-left: initial;
+    }
+    
+    
+    
+    
+    
+
+}

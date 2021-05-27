@@ -1,0 +1,101 @@
+// css components
+.textbox{
+    margin: auto 0px;
+    .title{
+        font-size: 40px;
+        font-family: peb;
+        line-height: normal;
+        letter-spacing: 1px;
+        display: flex;
+        align-items: center;
+        text-transform: uppercase;
+        &::before{
+            content: '';
+            width: 80px;
+            height: 2px;
+            background-color: $black-bg-cl;
+            display: inline-block;
+            margin-right: 20px;
+            
+        }
+        &.--yellow{
+            color: $yellow-cl;
+        }
+        &.--white{
+            color: $white-cl;
+        }
+
+    }
+    .description{
+        margin:0 50px 10px 100px;
+        font-family: pr;
+        line-height: 24px;
+        &.--white{
+            color: $white-cl;
+        }
+    }
+    &.--textRight{
+        text-align: right;
+        
+        .title{
+            flex-direction: row-reverse;
+            &::before{
+                margin-left: 20px;
+                margin-right: inherit;
+            }
+        }
+        .description{
+            margin:0 100px 10px 50px;
+        }
+        .btnmore{
+            margin-left: initial;
+            margin-right: 100px;
+        }
+    }
+    &.--textCenter{
+        max-width: 460px;
+        margin: initial;
+        margin: auto;
+        .title{
+            justify-content: center;
+            display: flex;
+            flex-direction: column-reverse;
+            
+            &::before{
+                margin-top: 20px;
+                margin-bottom: 30px;
+                width: 40px;
+                background: $yellow-cl;
+            }
+        
+        }
+        
+    }
+    @include tablet{
+        .title{
+            &::before{
+                display: none;
+            }
+        }    
+        .description{
+            margin: initial;
+            margin-right: 20px;
+        }
+        &.--textRight{
+            .description{
+                margin: initial;
+                margin-left: 20px;
+            }
+            .btnmore{
+                margin-right: initial;
+            }
+        }
+    }
+    @include mobile{
+        .title{
+            font-size: 32px;
+        }
+    }
+}
+
+

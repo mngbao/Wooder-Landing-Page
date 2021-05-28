@@ -35,7 +35,6 @@
                 <li><a href="#video">Video</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#news">News</a></li>
                 
             </ul>
             <div class="right">
@@ -69,7 +68,7 @@
     <main class="mainwrapper homepage">
         <section class="slider">
             <div class="slider__wrap">
-                <div class="slider__wrap-item ">
+                <div class="slider__wrap-item active">
                     <div class="text">
                         <h2>WOODER</h2>
                         <a href="#" class="btnmain">Learn more
@@ -87,7 +86,7 @@
                     </div>
                     <img src="img/wooder-slide2.jpg" alt="wooder-slide1" class="slider-img">
                 </div>
-                <div class="slider__wrap-item active">
+                <div class="slider__wrap-item ">
                     <div class="text">
                         <h2>WOODER</h2>
                         <a href="#" class="btnmain">Learn more
@@ -166,24 +165,24 @@
                     <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque reiciendis nostrum rem corrupti, accusantium natus? Qui vero autem provident porro.</p>
                 </div>
                 <div class="video__wrapper">
-                    <div class="video__item">
+                    <div data-video-id='jgZkrA8E5do' class="video__item">
                         <div class="video__item-img">
                             <img src="img/wooder-thumb1.jpg" alt="wooder-thumb1">
-                            <div class="playbutton"><img src="img/wooder-play.png" alt="wooder-player"></div>
+                            <div class="playbutton"><img src="img/wooder-play.png" alt="wooder-player1"></div>
                         </div>
                         <p class="video__item-caption">Innovative Design</p>
                     </div> 
-                    <div class="video__item">
+                    <div data-video-id='ORQB3w-hWRo' class="video__item">
                         <div class="video__item-img">
                             <img src="img/wooder-thumb2.jpg" alt="wooder-thumb2">
-                            <div class="playbutton"><img src="img/wooder-play.png" alt="wooder-player"></div>
+                            <div class="playbutton"><img src="img/wooder-play.png" alt="wooder-player2"></div>
                         </div>
                         <p class="video__item-caption">High-level quality</p>
                     </div> 
-                    <div class="video__item">
+                    <div data-video-id='QJHxooK9iKU' class="video__item">
                         <div class="video__item-img">
                             <img src="img/wooder-thumb3.jpg" alt="wooder-thum3">
-                            <div class="playbutton"><img src="img/wooder-play.png" alt="wooder-player"></div>
+                            <div class="playbutton"><img src="img/wooder-play.png" alt="wooder-player3"></div>
                         </div>
                         <p class="video__item-caption">Quality Products</p>
                     </div> 
@@ -298,6 +297,13 @@
             <div class="backtotop">Back To Top</div>
         </div>
     </footer>
+    <div class="popup-video">
+        <div class="iframe-wrap">
+            <iframe width="100%" height="100%" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="close"><span>X</span></div>
+        </div>
+    </div>
     <script src="js/main.js"></script>
+    
 </body>
 </html>

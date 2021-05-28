@@ -1,6 +1,6 @@
 .slider{
     width: 100%;
-    height: 100;
+    height: 100%;
     position: relative;
     overflow: hidden;
     &__wrap{
@@ -65,7 +65,9 @@
                     font-family: pb;
                     line-height: normal;  
                     display: flex;
-                    align-items: center;            
+                    align-items: center;   
+                    width: 135px;
+                    
                     &::before{
                         content:'';
                         width: 45px;
@@ -80,7 +82,7 @@
                     ul{
                         display: flex;
                         align-items: center;
-                        padding-left: 20px;
+                        
                         li{
                             width: 10px;
                             height: 10px;
@@ -193,6 +195,9 @@
         display: grid;
         grid-template-columns: 1fr var(--wImage);
         position: relative;
+        &__img{
+            
+        }
 
         &:last-child{
             grid-template-columns: var(--wImage) 1fr;    
@@ -609,3 +614,42 @@
         }
     }
 }
+.popup-video{
+    z-index: 10000;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, .7);
+    justify-content: center;
+    align-items: center;
+    .iframe-wrap{
+        background: #000;
+        border: 5px solid #eee;
+        position: relative;
+        height: 100%;
+        width: 100%;
+        max-width: 600px;
+        max-height: 338px;
+        .close{
+            position: absolute;
+            right: -25px;
+            top: -25px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            width: 50px;
+            height: 50px;
+            background: white;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    
+        }
+    }
+    
+}
+

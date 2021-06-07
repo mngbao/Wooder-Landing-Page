@@ -22,7 +22,7 @@
     <button id="checkbtn">Check</button>
     <button id="uncheckbtn">Uncheck</button> -->
     <header>
-        <div class="container-fluid">
+        <div class="container-fluid" >
             <div class="logo">
                 <a href="#">
                     <img src="img/wooder-logo.png" alt="wooder-logo">
@@ -68,7 +68,7 @@
     <main class="mainwrapper homepage">
         <section class="slider">
             <div class="slider__wrap">
-                <div class="slider__wrap-item active">
+                <div class="slider__wrap-item">
                     <div class="text">
                         <h2>WOODER</h2>
                         <a href="#" class="btnmain">Learn more
@@ -283,14 +283,14 @@
             </div>
         </section>
         <section class="bottomslider">
-            <div class="wrapper">
+            <div class="wrapper" data-flickity="">
                 <div class="wrapper__item"><img src="img/wooder-grid1.jpg" alt="wooder-grid1"></div>
                 <div class="wrapper__item"><img src="img/wooder-grid2.jpg" alt="wooder-grid2"></div>
                 <div class="wrapper__item"><img src="img/wooder-grid3.jpg" alt="wooder-grid3"></div>
             </div>
         </section>
     </main>
-    <footer>
+    <footer >
         <div class="container">
             <div class="copyright">2016 WOODER, Demo by CFD</div>
             <div class="logo"><a href="#"><img src="img/wooder-logo.png" alt="wooder-logo"></a></div>
@@ -303,6 +303,40 @@
             <div class="close"><span>X</span></div>
         </div>
     </div>
+
+    <div class="tab"style="display: none;">
+        <div class="tabTitle">
+            <a href="">Title 1</a>
+            <a href="">Title 2</a>
+            <a href="">Title 3</a>
+        </div>
+        <div class="tabInfo">
+            <div class="tabInfo__item active
+            ">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet doloremque a, mollitia quibusdam sint dolor totam suscipit. Enim, possimus fuga.</div>
+            <div class="tabInfo__item ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero debitis minima aut at illum totam minus doloribus temporibus suscipit ipsa?</div>
+            <div class="tabInfo__item ">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas ipsam veniam perspiciatis optio est amet, nostrum dolor adipisci voluptates veritatis?</div>
+        </div>
+    </div>
+
+    <div class="accordion"style="display: none;">
+        <div class="accordion__item">
+            <div class="accordion__item-title">Item 1</div>
+            <div class="accordion__item-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam itaque dignissimos voluptates, minus tenetur repellendus eligendi necessitatibus ratione quam eveniet aliquid voluptatum numquam incidunt impedit iure labore suscipit aut delectus?</div>
+            
+        </div>
+        <div class="accordion__item">
+            <div class="accordion__item-title">Item 2</div>
+            <div class="accordion__item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dignissimos quod fugit. Molestiae explicabo, quasi laborum, vel eum dignissimos cupiditate impedit nam, fuga quidem iure ab debitis suscipit perferendis obcaecati.</div>
+        </div>
+        <div class="accordion__item">
+            <div class="accordion__item-title">Item 3</div>
+            <div class="accordion__item-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod alias sit rem cum incidunt illo adipisci pariatur dolor odit distinctio nam, hic corrupti quidem quis ipsa modi dolore, repellendus quisquam?</div>
+        </div>
+        
+    </div>
+
+    <script src="dest/jsmain.min.js"></script>
+    
     <script src="js/main.js"></script>
     
 </body>

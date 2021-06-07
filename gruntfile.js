@@ -15,6 +15,7 @@ module.exports = grunt => {
 		// minify / uglify js
 		uglify: {
 			my_target: {
+				
 				files: {
 					'<%= dirs.dest %>/jsmain.min.js': ['<%= dirs.js %>/libs/*.js']
 				}

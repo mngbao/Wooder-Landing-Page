@@ -3,16 +3,21 @@
     height: 100%;
     position: relative;
     overflow: hidden;
+    
     &__wrap{
         width: 100%;
         height: 100vh;
-        &-item {
+
+        &-item{
             width: 100%;
             height: 100%;
             position: relative;
-            display: none;
+            
             .slider-img{
-                @include midimg(initial);
+                @include midimg;
+                height: 100%;
+                width: 100%;
+                overflow: hidden;
             }
 
             .text{
@@ -78,7 +83,7 @@
                     }
                 }
                 
-                &__dots{
+                &__dots, .flickity-page-dots{
                     ul{
                         display: flex;
                         align-items: center;
@@ -139,12 +144,13 @@
     }
     @include tablet{
         .slider{
-            
             &__bottom{
                 .paging{
                     &__number{
                         &::before{
-                            display: none;
+                            visibility: hidden;
+                            pointer-events: none;
+                            width:30px;
                         }
                     }
                 }
@@ -249,7 +255,6 @@
 
      
 }
-
 .video{
     padding-top: 0;
     .textbox{
@@ -352,7 +357,6 @@
     }
     
 }
-
 .info{
     width: 100%;
     height: auto;
@@ -599,17 +603,19 @@
         }
     }
 }
-
 .bottomslider{
-    .wrapper{
-        display: flex;
-        align-items: center;
+    height: 100vh;
+    width: auto;
+    .flickity-viewport,.flickity-enabled,.wrapper{
+        height: 100% !important;
         width: 100%;
-        overflow: hidden;
-        min-width: 400px;
         &__item{
+            display: block;
+            height: 520px;
+            width: 100%;
             img{
-                margin: 0 15px;
+                height: 100%;
+                
             }
         }
     }
@@ -651,5 +657,68 @@
         }
     }
     
+}
+
+.tab{
+    background: grey;
+    width: 600px;
+    height: 600px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .tabTitle{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100px;
+        
+        a{
+            padding: 30px;
+            margin: 10px;
+            text-decoration: none;
+            color: $black-cl;
+            background-color: $yellow-cl;
+        }
+
+    }
+    .tabInfo{
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        width: 80%;
+        .tabInfo__item{
+            height: 400px;
+            display: none;
+            &.active{
+                display: block;
+            }
+            &:first-child{
+                background-color: red;
+            }
+            &:last-child{
+                background-color: skyblue;
+            }
+        }
+        
+    }
+}
+
+.accordion{
+    .accordion__item{
+        background-color: yellowgreen;
+        margin: 30px;
+        width: 500px;
+        &-title{
+            height: 50px;
+            cursor: pointer;
+        }
+        &-text{
+            display: none;
+            padding: 20px;
+        }
+    }
 }
 

@@ -1,6 +1,7 @@
 // Gruntfile.js
 module.exports = grunt => {
 	// Load all grunt tasks matching the ['grunt-*', '@*/grunt-*'] patterns
+	const sass = require('node-sass')
 	require('load-grunt-tasks')(grunt);
 
 	grunt.initConfig({
@@ -54,7 +55,6 @@ module.exports = grunt => {
 				}
 			}
 		},
-
 		sass: {
 			dist: {
 				options: {
@@ -67,7 +67,6 @@ module.exports = grunt => {
 				}
 			}
 		},
-
 		watch: {
 			options: {
 				livereload: true,
@@ -77,24 +76,24 @@ module.exports = grunt => {
 				files: "<%= dirs.scss %>/**/**/*.scss",
 				tasks: ['sass']
 			},
-			// cssmin: {
-			//     files: "<%= dirs.css %>/**/*.css",
-			//     tasks: ['cssmin']
-			// },
-			// uglify: {
-			//     files: ['<%= dirs.js %>/*.js'],
-			//     tasks: ['uglify']
-			// },
+			cssmin: {
+				files: "<%= dirs.css %>/**/*.css",
+				tasks: ['cssmin']
+			},
+			uglify: {
+				files: ['<%= dirs.js %>/*.js'],
+				tasks: ['uglify']
+			},
 		},
-
 		browserSync: {
 			dev: {
 				bsFiles: {
 					src: [
 						'<%= dirs.dest %>/style.min.css',
 						'*.html',
+
 						'<%= dirs.dest %>/*.js',
-						'<%= dirs.js %>/*.js',
+						'<%= dirs.css %>/*.css'
 
 					]
 				},
@@ -105,11 +104,11 @@ module.exports = grunt => {
 			}
 		}
 	});
-
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-browser-sync');
 	grunt.registerTask('default', ['browserSync', 'watch']);
+	grunt.registerTask('convert-sass', 'sass');
 };

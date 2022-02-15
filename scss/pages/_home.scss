@@ -57,6 +57,22 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      .mouse {
+        &__arrow {
+          animation: down 2s infinite;
+        }
+      }
+      @keyframes down {
+        0% {
+          transform: tranlateY(0);
+        }
+        50% {
+          transform: translateY(1em);
+        }
+        100% {
+          transform: translateY(0em);
+        }
+      }
       .paging {
         display: flex;
         align-items: center;
@@ -548,8 +564,8 @@
           }
         }
         p {
-          height: 55px;
-          @include overtext(3);
+          height: 50px;
+          @include overtext(2);
         }
       }
     }

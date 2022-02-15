@@ -1,12 +1,23 @@
+// Header
+let hamburger = document.querySelector('.menubtn');
+let menu = document.querySelector('nav');
+hamburger.addEventListener('click', function (e) {
+    menu.classList.toggle('open-nav')
+    document.querySelector('.menubtn .mid').classList.toggle('change2');
+    document.querySelector('.menubtn .up').classList.toggle('change1');
+    document.querySelector('.menubtn .down').classList.toggle('change3');
+    document.querySelector('body').style.background = "rgba(0, 0, 0, 0.7);"
+
+})
 // Header Js
 let menus = document.querySelectorAll('header .menu a');
 let headerHeight = document.querySelector('header').offsetHeight;
 let sections = [];
 
-// Removeis-selectedClass
+// RemoveactiveClass
 function removeactiveClass() {
     menus.forEach(function (menu_el, menu_in) {
-        menu_el.classList.remove('is-selected');
+        menu_el.classList.remove('active');
     })
 }
 
@@ -22,8 +33,8 @@ menus.forEach(function (element, index) {
             top: section.offsetTop - headerHeight,
             behavior: "smooth",
         });
-        removeis - selectedClass();
-        element.classList.add('is-selected')
+        removeactiveClass();
+        element.classList.add('active')
     });
 });
 
@@ -45,23 +56,22 @@ window.addEventListener('scroll', function (e) {
 
         if (window.pageYOffset >= start && window.pageYOffset <= end) {
             removeactiveClass();
-            menus[sec_in].classList.add('is-selected');
+            menus[sec_in].classList.add('active');
         }
         else {
-            menus[sec_in].classList.remove('is-selected');
+            menus[sec_in].classList.remove('active');
         }
     });
 });
 
 // Slider js
-$(document).ready(function () {
-    $('.slider__wrap').flickity({
-        // options
-        cellAlign: 'left',
-        contain: true,
-        wrapAround: true,
-    });
-})
+
+$('.slider__wrap').flickity({
+
+    cellAlign: 'left',
+    contain: true,
+    wrapAround: true,
+});
 //FLickity
 
 // setFlickity('.slider__wrap');
@@ -158,7 +168,7 @@ let titles = $('.tabTitle a');
 titles.click(function (e) {
     e.preventDefault();
     let index = $(this).index();
-    $(this).addClass('is-selected').siblings().removeClass('is-selected');
+    $(this).addClass('active').siblings().removeClass('active');
     $('.tabInfo .tabInfo__item').eq(index).css({
         display: 'block',
     })

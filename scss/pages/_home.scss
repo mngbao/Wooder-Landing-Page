@@ -9,11 +9,12 @@
     width: 100%;
     height: 100vh;
     &-item {
+      position: relative;
       width: 100%;
       height: 100%;
-      position: relative;
-      display: none;
       .slider-img {
+        width: 100%;
+        height: 100%;
         @include midimg(initial);
       }
 
@@ -27,6 +28,17 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
+        transition: fadeIn 2s ease-in-out;
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translate(-50%, -40%);
+          }
+          to {
+            opacity: 1;
+            transform: translate(-50%, -50%);
+          }
+        }
         h2 {
           color: $yellow-cl;
           font-size: 90px;
@@ -595,15 +607,22 @@
 }
 
 .bottomslider {
+  height: 45em;
   .wrapper {
-    width: 100%;
-    display: flex;
-    align-items: center;
+    // display: flex;
+    // align-items: center;
     overflow: hidden;
     &__item {
-      margin: 0 15px;
+      overflow: hidden;
+      width: 700px;
+      height: 45em;
+      position: relative;
       img {
-        min-width: 600px;
+        min-width: 100%;
+        min-height: 100%;
+        object-fit: cover;
+        position: absolute;
+        @include mid();
       }
     }
   }

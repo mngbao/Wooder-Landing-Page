@@ -68,8 +68,10 @@ $(document).ready(function () {
     let slider = document.querySelector('.slider__wrap');
     let flickSLider = new Flickity(slider, {
         cellAlign: 'left',
-        contain: true,
         wrapAround: true,
+        selectedAttraction: 0.01,
+        friction: 0.15,
+        imagesLoaded: true
     });
 
 

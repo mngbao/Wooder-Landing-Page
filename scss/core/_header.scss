@@ -215,16 +215,14 @@ header {
   @include mobile {
     --heightHeader: 80px;
     .nav {
+      display: block;
       width: 100vw;
       height: 100vh;
       background: $black-bg-cl;
       position: fixed;
       top: 0;
       left: 0;
-      @include transform(initial);
       z-index: 200;
-      opacity: 1;
-      @include transition(opacity 0.3s);
       ul {
         flex-direction: column;
         @include mid();
